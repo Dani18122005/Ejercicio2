@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header { grid-area: topbar; }
+        article { grid-area: content; }
+
+        .navbar {
+            display: flex;
+            justify-content: space-around; /* Espaciado uniforme */
+            align-items: center; /* Centrados verticalmente */
+            background-color: #111;
+            padding: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* Elementos de la navegación */
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+        }
+
+        .image-gallery {
+            display: grid;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: border-radius 0.3s ease; /* Transición suave */
+        }
+
+        /* Para pantallas pequeñas: 1 columna */
+        @media (max-width: 600px) {
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Para pantallas medianas: 2 columnas */
+        @media (min-width: 601px) and (max-width: 1024px) {
+            .image-gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Para pantallas grandes: cuadrícula 2x2 */
+        @media (min-width: 1025px) {
+            .image-gallery {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button id="estilo1">Estilo1</button>
+        <button id="estilo2">Estilo2</button>
+        <button id="estilo3">Estilo3</button>
+        <button id="estilo4">Estilo4</button>
+    </header>
+    <div class="image-gallery" id="ig">
+        <a onclick="cambiar();"id="ig1"><img src="imagen1.jpg" alt="Imagen 1" id="img1" ></a>
+        <img src="imagen2.jpg" alt="Imagen 2">
+        <img src="imagen3.jpg" alt="Imagen 3">
+        <img src="imagen4.jpg" alt="Imagen 4">
+        <img src="imagen5.jpg" alt="Imagen 5">
+        <img src="imagen6.jpg" alt="Imagen 6">
+    </div>
+    
+    <script src="ejercicio2.js">
+      
+    </script>
+</body>
+</html>
